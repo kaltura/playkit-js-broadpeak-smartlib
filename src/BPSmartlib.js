@@ -36,7 +36,7 @@ class BPSmartlib extends BasePlugin {
   constructor(name: string, player: KalturaPlayer, config: Object) {
     super(name, player, config);
     this.eventManager.listen(this.player, this.player.Event.Core.ERROR, () => {
-      this.session.stopStreamingSession();
+      this.reset();
     });
     this._attachChangeMedia();
     SmartLib.getInstance().init(this.config.analyticsAddress, this.config.nanoCDNHost, this.config.broadpeakDomainNames);
