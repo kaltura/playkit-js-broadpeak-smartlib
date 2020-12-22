@@ -1,0 +1,42 @@
+conditions: v1
+sudo: required
+dist: xenial
+language: node_js
+node_js:
+  - 'node'
+
+addons:
+  chrome: stable
+
+services:
+  - xvfb
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+before_install:
+  - export DISPLAY=:99.0
+  - chmod +x ./scripts/travis.sh
+
+script: ./scripts/travis.sh
+
+stages:
+  - Tests
+
+jobs:
+  fast_finish: true
+  include:
+    # Required tests
+    - stage: Tests
+      if: (branch = master) OR (tag IS present) OR (type = pull_request)
+      name: 'Running lint'
+      env: TRAVIS_MODE=lint
+    - stage: Tests
+      if: (branch = master) OR (tag IS present) OR (type = pull_request)
+      name: 'Running Flow type check'
+      env: TRAVIS_MODE=flow
+    - stage: Tests
+      if: (branch = master) OR (tag IS present) OR (type = pull_request)
+      name: 'Running unit tests'
+      env: TRAVIS_MODE=unitTests
