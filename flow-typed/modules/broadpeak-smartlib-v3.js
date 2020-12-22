@@ -1,4 +1,4 @@
 // @flow
-declare module '@playkit-js/playkit-js' {
+declare module '@broadpeak/smartlib-v3' {
   declare module.exports: any;
 }

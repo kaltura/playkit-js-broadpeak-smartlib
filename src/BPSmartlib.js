@@ -1,11 +1,14 @@
 // @flow
-import {BasePlugin} from 'kaltura-player-js';
+import {KalturaPlayer, BasePlugin, core} from 'kaltura-player-js';
 import {SmartLib} from '@broadpeak/smartlib-v3';
+import {BpEngineDecorator} from './bp-engine-decorator';
+import {BPMiddleware} from './bp-middleware';
+
+const {BaseMiddleware, Utils} = core;
 /**
  * The BPSmartlib plugin.
  * @class Ima
  * @param {string} name - The plugin name.
- * @param {KalturaPlayer} player - The player instance.
  * @param {Object} config - The plugin config.
  * @extends BasePlugin
  */
@@ -23,6 +26,56 @@ class BPSmartlib extends BasePlugin {
   };
 
   /**
+   * Promise for src changing.
+   * @type {Promise<*>}
+   * @member
+   * @public
+   * @memberof BPSmartlib
+   */
+  _srcPromise: DeferredPromise;
+
+  /**
+   * Source change callback
+   * @type {Promise<*>}
+   * @member
+   * @public
+   * @memberof BPSmartlib
+   */
+  sourceChangeCallback: Function;
+
+  /**
+   * session object of BP
+   * @type {Promise<*>}
+   * @member
+   * @public
+   * @memberof BPSmartlib
+   */
+  session: any;
+
+  /**
+   * Gets the engine decorator.
+   * @param {IEngine} engine - The engine to decorate.
+   * @public
+   * @returns {IEngineDecorator} - The ads api.
+   * @instance
+   * @memberof Ima
+   */
+  getEngineDecorator(engine: IEngine): IEngineDecorator {
+    return new BpEngineDecorator(engine, this);
+  }
+
+  /**
+   * Gets the middleware.
+   * @public
+   * @returns {ImaMiddleware} - The middleware api.
+   * @instance
+   * @memberof Ima
+   */
+  getMiddlewareImpl(): BaseMiddleware {
+    return new BPMiddleware(this);
+  }
+
+  /**
    * Whether the ima plugin is valid.
    * @static
    * @override
@@ -38,8 +91,16 @@ class BPSmartlib extends BasePlugin {
     this.eventManager.listen(this.player, this.player.Event.Core.ERROR, () => {
       this.reset();
     });
-    this._attachChangeMedia();
+    this._attachSourceChange();
     SmartLib.getInstance().init(this.config.analyticsAddress, this.config.nanoCDNHost, this.config.broadpeakDomainNames);
+  }
+
+  srcReady(): Promise<*> {
+    return this._srcPromise ? this._srcPromise : Promise.resolve();
+  }
+
+  setSourceChangeCallback(callback: Function) {
+    this.sourceChangeCallback = callback;
   }
 
   /**
@@ -59,9 +120,10 @@ class BPSmartlib extends BasePlugin {
    * @instance
    */
   reset(): void {
-    this.session.stopStreamingSession();
+    if (this.session) {
+      this.session.stopStreamingSession();
+    }
     this.session = null;
-    this._attachChangeMedia();
   }
 
   /**
@@ -76,24 +138,24 @@ class BPSmartlib extends BasePlugin {
     SmartLib.getInstance().release();
   }
 
-  _attachChangeMedia(): void {
-    this.eventManager.listenOnce(this.player, this.player.Event.Core.SOURCE_SELECTED, event => {
+  _attachSourceChange() {
+    this.eventManager.listen(this.player, this.player.Event.Core.SOURCE_SELECTED, event => {
+      this._srcPromise = Utils.Object.defer();
       this.session = SmartLib.getInstance().createStreamingSession();
       this.session.attachPlayer(this.player);
-      this.session.getURL(event.payload.selectedSource[0].url).then(result => {
-        if (!result.isError()) {
-          let sources = this.player.config.sources;
-          const streamType = this.player._localPlayer.streamType;
-          this.player.reset();
-          sources[streamType].forEach(source => {
-            source.url = result.getURL();
-          });
-          // Start the playback
-          this.player.setMedia({sources, plugins: this.player.config.plugins, session: this.player.config.session});
-        } else {
-          this.session.stopStreamingSession();
-        }
-      });
+      this._getSource(event.payload.selectedSource[0].url);
+    });
+  }
+
+  _getSource(playbackUrl: string): void {
+    this.session.getURL(playbackUrl).then(result => {
+      if (!result.isError()) {
+        this.sourceChangeCallback(result.getURL());
+        this._srcPromise.resolve();
+      } else {
+        this.reset();
+        this._srcPromise.reject();
+      }
     });
   }
 }
