@@ -12,7 +12,7 @@ class BpEngineDecorator implements IEngineDecorator {
   _plugin: BPSmartlib;
 
   get active(): boolean {
-    return true;
+    return false;
   }
 
   dispatchEvent(event: FakeEvent): boolean {

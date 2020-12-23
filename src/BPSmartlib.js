@@ -96,7 +96,7 @@ class BPSmartlib extends BasePlugin {
   }
 
   srcReady(): Promise<*> {
-    return this._srcPromise ? this._srcPromise : Promise.resolve();
+    return this._srcPromise;
   }
 
   setSourceChangeCallback(callback: Function) {
