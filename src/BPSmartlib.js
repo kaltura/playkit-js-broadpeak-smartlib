@@ -104,15 +104,6 @@ class BPSmartlib extends BasePlugin {
   }
 
   /**
-   * Prepare the plugin before media is loaded.
-   * @override
-   * @public
-   * @returns {void}
-   * @instance
-   */
-  loadMedia(): void {}
-
-  /**
    * Resets the plugin.
    * @override
    * @public
@@ -150,9 +141,11 @@ class BPSmartlib extends BasePlugin {
   _getSource(playbackUrl: string): void {
     this.session.getURL(playbackUrl).then(result => {
       if (!result.isError()) {
+        this.logger.debug('getUrl response', result.getURL());
         this.sourceChangeCallback(result.getURL());
         this._srcPromise.resolve();
       } else {
+        this.logger.error('getUrl failed', result.getErrorCode(), result.getErrorMessage());
         this.reset();
         this._srcPromise.reject();
       }
