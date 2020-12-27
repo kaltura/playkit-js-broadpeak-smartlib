@@ -7,7 +7,7 @@ import {BPMiddleware} from './bp-middleware';
 const {BaseMiddleware, Utils} = core;
 /**
  * The BPSmartlib plugin.
- * @class Ima
+ * @class BPSmartlib
  * @param {string} name - The plugin name.
  * @param {Object} config - The plugin config.
  * @extends BasePlugin
@@ -17,7 +17,7 @@ class BPSmartlib extends BasePlugin {
    * The default configuration of the plugin.
    * @type {Object}
    * @static
-   * @memberof Ima
+   * @memberof BPSmartlib
    */
   static defaultConfig: Object = {
     analyticsAddress: null,
@@ -58,7 +58,7 @@ class BPSmartlib extends BasePlugin {
    * @public
    * @returns {IEngineDecorator} - The ads api.
    * @instance
-   * @memberof Ima
+   * @memberof BPSmartlib
    */
   getEngineDecorator(engine: IEngine): IEngineDecorator {
     return new BpEngineDecorator(engine, this);
@@ -67,20 +67,20 @@ class BPSmartlib extends BasePlugin {
   /**
    * Gets the middleware.
    * @public
-   * @returns {ImaMiddleware} - The middleware api.
+   * @returns {BPMiddleware} - The middleware api.
    * @instance
-   * @memberof Ima
+   * @memberof BPSmartlib
    */
   getMiddlewareImpl(): BaseMiddleware {
     return new BPMiddleware(this);
   }
 
   /**
-   * Whether the ima plugin is valid.
+   * Whether the BPSmartlib plugin is valid.
    * @static
    * @override
    * @public
-   * @memberof Ima
+   * @memberof BPSmartlib
    */
   static isValid() {
     return true;

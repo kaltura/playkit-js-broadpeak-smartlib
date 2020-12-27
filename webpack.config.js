@@ -17,7 +17,7 @@ module.exports = {
   output: {
     path: __dirname + '/dist',
     filename: '[name].js',
-    library: ['KalturaPlayer', 'plugins', 'BPSmartLib'],
+    library: ['KalturaPlayer', 'plugins', 'bpsmartlib'],
     devtoolModuleFilenameTemplate: './BPSmartLib/[resource-path]'
   },
   devtool: 'source-map',

@@ -1,6 +1,6 @@
 // @flow
 import {core} from 'kaltura-player-js';
-import {BPSmartlib} from './BPSmartlib';
+import {BPSmartlib} from './bp-smartlib';
 
 const {BaseMiddleware} = core;
 /**

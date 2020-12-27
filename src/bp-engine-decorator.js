@@ -1,11 +1,11 @@
 // @flow
-import {BPSmartlib} from './BPSmartlib';
+import {BPSmartlib} from './bp-smartlib';
 
 /**
- * Engine decorator for ima plugin.
- * @class ImaEngineDecorator
+ * Engine decorator for BPSmartlib plugin.
+ * @class BpEngineDecorator
  * @param {IEngine} engine - The HTML5 engine.
- * @param {Ima} plugin - The ima plugin.
+ * @param {BPSmartlib} plugin - The broadpeak plugin.
  * @implements {IEngineDecorator}
  */
 class BpEngineDecorator implements IEngineDecorator {
