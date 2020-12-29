@@ -1,12 +1,12 @@
 // @flow
 import {core} from 'kaltura-player-js';
-import {BPSmartlib} from './bp-smartlib';
+import {BroadPeak} from './bp-smartlib';
 
 const {BaseMiddleware} = core;
 /**
- * Middleware implementation for BPSmartlib plugin.
+ * Middleware implementation for BroadPeak plugin.
  * @class BPMiddleware
- * @param {BPSmartlib} context - The BP plugin context.
+ * @param {BroadPeak} context - The BP plugin context.
  * @private
  */
 class BPMiddleware extends BaseMiddleware {
@@ -23,9 +23,9 @@ class BPMiddleware extends BaseMiddleware {
    * @private
    * @memberof BPMiddleware
    */
-  _context: BPSmartlib;
+  _context: BroadPeak;
 
-  constructor(context: BPSmartlib) {
+  constructor(context: BroadPeak) {
     super();
     this._context = context;
   }

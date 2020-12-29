@@ -1,6 +1,6 @@
 // @flow
 import {registerPlugin} from 'kaltura-player-js';
-import {BPSmartlib} from './bp-smartlib';
+import {BroadPeak} from './bp-smartlib';
 
 declare var __VERSION__: string;
 declare var __NAME__: string;
@@ -8,9 +8,9 @@ declare var __NAME__: string;
 const VERSION = __VERSION__;
 const NAME = __NAME__;
 
-export {BPSmartlib as Plugin};
+export {BroadPeak as Plugin};
 export {VERSION, NAME};
 
-const pluginName: string = 'bpsmartlib';
+const pluginName: string = 'broadpeak';
 
-registerPlugin(pluginName, BPSmartlib);
+registerPlugin(pluginName, BroadPeak);

@@ -6,18 +6,18 @@ import {BPMiddleware} from './bp-middleware';
 
 const {BaseMiddleware, Utils} = core;
 /**
- * The BPSmartlib plugin.
- * @class BPSmartlib
+ * The BroadPeak plugin.
+ * @class BroadPeak
  * @param {string} name - The plugin name.
  * @param {Object} config - The plugin config.
  * @extends BasePlugin
  */
-class BPSmartlib extends BasePlugin {
+class BroadPeak extends BasePlugin {
   /**
    * The default configuration of the plugin.
    * @type {Object}
    * @static
-   * @memberof BPSmartlib
+   * @memberof BroadPeak
    */
   static defaultConfig: Object = {
     analyticsAddress: null,
@@ -30,7 +30,7 @@ class BPSmartlib extends BasePlugin {
    * @type {Promise<*>}
    * @member
    * @public
-   * @memberof BPSmartlib
+   * @memberof BroadPeak
    */
   _srcPromise: DeferredPromise;
 
@@ -39,7 +39,7 @@ class BPSmartlib extends BasePlugin {
    * @type {Promise<*>}
    * @member
    * @public
-   * @memberof BPSmartlib
+   * @memberof BroadPeak
    */
   sourceChangeCallback: Function;
 
@@ -48,7 +48,7 @@ class BPSmartlib extends BasePlugin {
    * @type {Promise<*>}
    * @member
    * @public
-   * @memberof BPSmartlib
+   * @memberof BroadPeak
    */
   session: any;
 
@@ -58,7 +58,7 @@ class BPSmartlib extends BasePlugin {
    * @public
    * @returns {IEngineDecorator} - The ads api.
    * @instance
-   * @memberof BPSmartlib
+   * @memberof BroadPeak
    */
   getEngineDecorator(engine: IEngine): IEngineDecorator {
     return new BpEngineDecorator(engine, this);
@@ -69,18 +69,18 @@ class BPSmartlib extends BasePlugin {
    * @public
    * @returns {BPMiddleware} - The middleware api.
    * @instance
-   * @memberof BPSmartlib
+   * @memberof BroadPeak
    */
   getMiddlewareImpl(): BaseMiddleware {
     return new BPMiddleware(this);
   }
 
   /**
-   * Whether the BPSmartlib plugin is valid.
+   * Whether the BroadPeak plugin is valid.
    * @static
    * @override
    * @public
-   * @memberof BPSmartlib
+   * @memberof BroadPeak
    */
   static isValid() {
     return true;
@@ -153,4 +153,4 @@ class BPSmartlib extends BasePlugin {
   }
 }
 
-export {BPSmartlib};
+export {BroadPeak};

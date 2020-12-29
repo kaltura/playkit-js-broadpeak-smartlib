@@ -1,17 +1,17 @@
 // @flow
-import {BPSmartlib} from './bp-smartlib';
+import {BroadPeak} from './bp-smartlib';
 
 /**
- * Engine decorator for BPSmartlib plugin.
+ * Engine decorator for BroadPeak plugin.
  * @class BpEngineDecorator
  * @param {IEngine} engine - The HTML5 engine.
- * @param {BPSmartlib} plugin - The broadpeak plugin.
+ * @param {BroadPeak} plugin - The broadpeak plugin.
  * @implements {IEngineDecorator}
  */
 class BpEngineDecorator implements IEngineDecorator {
-  _plugin: BPSmartlib;
+  _plugin: BroadPeak;
 
-  constructor(engine: IEngine, plugin: BPSmartlib) {
+  constructor(engine: IEngine, plugin: BroadPeak) {
     this._plugin = plugin;
     this._plugin.setSourceChangeCallback(playbackUrl => (engine.src = playbackUrl));
   }

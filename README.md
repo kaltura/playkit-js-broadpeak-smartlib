@@ -1,4 +1,4 @@
-# PlayKit JS Live BPSmartLib - [bp-smartlib] Adapter for the [PlayKit JS Player] for samsung devices
+# PlayKit JS Live BroadPeak - [bp-smartlib] Adapter for the [PlayKit JS Player] for samsung devices
 
 [![Build Status](https://travis-ci.com/kaltura/playkit-js-avplay.svg?branch=master)](https://travis-ci.org/kaltura/playkit-js-broadpeak-smartlib)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)

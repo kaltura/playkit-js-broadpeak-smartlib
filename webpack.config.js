@@ -17,8 +17,8 @@ module.exports = {
   output: {
     path: __dirname + '/dist',
     filename: '[name].js',
-    library: ['KalturaPlayer', 'plugins', 'bpsmartlib'],
-    devtoolModuleFilenameTemplate: './BPSmartLib/[resource-path]'
+    library: ['KalturaPlayer', 'plugins', 'broadpeack'],
+    devtoolModuleFilenameTemplate: './BroadPeak/[resource-path]'
   },
   devtool: 'source-map',
   plugins: plugins,
