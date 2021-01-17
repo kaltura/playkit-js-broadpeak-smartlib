@@ -18,8 +18,6 @@ cache:
 before_install:
   - export DISPLAY=:99.0
   - chmod +x ./scripts/travis.sh
-  - npm install -g npm-cli-login
-  - npm-cli-login -u $BP_USER -p $BP_TOKEN -e $NPM_EMAIL -r https://delivery-platform.broadpeak.tv/js/ -s @broadpeak
 
 script: ./scripts/travis.sh
 
