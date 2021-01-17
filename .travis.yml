@@ -18,7 +18,7 @@ cache:
 before_install:
   - export DISPLAY=:99.0
   - chmod +x ./scripts/travis.sh
-  - echo -e "$BP_USER\nyuvaltest\n$NPM_EMAIL" | npm login -e $NPM_EMAIL -r https://delivery-platform.broadpeak.tv/js/ -s @broadpeak
+  - echo "//delivery-platform.broadpeak.tv/js/:_authToken=\${BP_NPM_TOKEN}" > .npmrc
 
 script: ./scripts/travis.sh
 
