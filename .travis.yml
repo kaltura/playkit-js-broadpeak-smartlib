@@ -18,7 +18,7 @@ cache:
 before_install:
   - export DISPLAY=:99.0
   - chmod +x ./scripts/travis.sh
-  - echo "@broadpeak:registry=https://delivery-platform.broadpeak.tv/js/\n//delivery-platform.broadpeak.tv/js/:_authToken=\${BP_NPM_TOKEN}" > .npmrc
+  - npm config set //registry.npmjs.org/:_authToken=$TEST_TOKEN
 
 script: ./scripts/travis.sh
 
