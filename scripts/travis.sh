@@ -1,8 +1,6 @@
 #!/bin/sh
 # https://docs.travis-ci.com/user/customizing-the-build/#Implementing-Complex-Build-Steps
 set -ev
-npm install -g npm-cli-login
-npm-cli-login -u $BP_USER -p $BP_TOKEN -e $NPM_EMAIL -r https://delivery-platform.broadpeak.tv/js/ -s @broadpeak
 yarn install
 if [ "${TRAVIS_MODE}" = "lint" ]; then
   yarn run eslint
