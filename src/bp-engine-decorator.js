@@ -1,14 +1,14 @@
 // @flow
-import {BroadPeak} from './bp-smartlib';
+import {BroadPeak} from './broadpeak';
 
 /**
  * Engine decorator for BroadPeak plugin.
- * @class BpEngineDecorator
+ * @class BPEngineDecorator
  * @param {IEngine} engine - The HTML5 engine.
  * @param {BroadPeak} plugin - The broadpeak plugin.
  * @implements {IEngineDecorator}
  */
-class BpEngineDecorator implements IEngineDecorator {
+class BPEngineDecorator implements IEngineDecorator {
   _plugin: BroadPeak;
 
   constructor(engine: IEngine, plugin: BroadPeak) {
@@ -25,4 +25,4 @@ class BpEngineDecorator implements IEngineDecorator {
   }
 }
 
-export {BpEngineDecorator};
+export {BPEngineDecorator};

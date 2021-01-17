@@ -1,6 +1,6 @@
 // @flow
 import {registerPlugin} from 'kaltura-player-js';
-import {BroadPeak} from './bp-smartlib';
+import {BroadPeak} from './broadpeak';
 
 declare var __VERSION__: string;
 declare var __NAME__: string;

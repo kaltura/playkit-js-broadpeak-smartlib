@@ -5,7 +5,7 @@
     "kaltura",
     "player",
     "playkit-js",
-    "playkit-js-broadpeak-smartlib",
+    "playkit-js-broadpeak",
     "html5 player"
   ],
   "homepage": "https://github.com/kaltura/playkit-js-broadpeak-smartlib",
@@ -14,7 +14,7 @@
   },
   "repository": "https://github.com/kaltura/playkit-js-broadpeak-smartlib",
   "license": "AGPL-3.0",
-  "main": "dist/playkit-broadpeak-smartlib.js",
+  "main": "dist/playkit-broadpeak.js",
   "scripts": {
     "prebuild": "npm run clean",
     "build": "webpack --mode production",

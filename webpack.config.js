@@ -13,12 +13,12 @@ let plugins = [
 
 module.exports = {
   context: __dirname + '/src',
-  entry: {'playkit-broadpeak-smartlib': 'index.js'},
+  entry: {'playkit-broadpeak': 'index.js'},
   output: {
     path: __dirname + '/dist',
     filename: '[name].js',
     library: ['KalturaPlayer', 'plugins', 'broadpeak'],
-    devtoolModuleFilenameTemplate: './BroadPeak/[resource-path]'
+    devtoolModuleFilenameTemplate: './broadpeak/[resource-path]'
   },
   devtool: 'source-map',
   plugins: plugins,

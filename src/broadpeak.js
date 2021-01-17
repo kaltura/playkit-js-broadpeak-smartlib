@@ -1,7 +1,7 @@
 // @flow
 import {KalturaPlayer, BasePlugin, core} from 'kaltura-player-js';
 import {SmartLib} from '@broadpeak/smartlib-v3';
-import {BpEngineDecorator} from './bp-engine-decorator';
+import {BPEngineDecorator} from './bp-engine-decorator';
 import {BPMiddleware} from './bp-middleware';
 
 const {BaseMiddleware, Utils} = core;
@@ -61,7 +61,7 @@ class BroadPeak extends BasePlugin {
    * @memberof BroadPeak
    */
   getEngineDecorator(engine: IEngine): IEngineDecorator {
-    return new BpEngineDecorator(engine, this);
+    return new BPEngineDecorator(engine, this);
   }
 
   /**

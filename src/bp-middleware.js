@@ -1,6 +1,6 @@
 // @flow
 import {core} from 'kaltura-player-js';
-import {BroadPeak} from './bp-smartlib';
+import {BroadPeak} from './broadpeak';
 
 const {BaseMiddleware} = core;
 /**
