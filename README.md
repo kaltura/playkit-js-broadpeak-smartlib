@@ -10,6 +10,7 @@ PlayKit JS Broadpeak Smartlib is written in [ECMAScript6], statically analysed u
 [flow]: https://flow.org/
 [ecmascript6]: https://github.com/ericdouglas/ES6-Learning#articles--tutorials
 [babel]: https://babeljs.io
+[kaltura player js]: https://github.com/kaltura/kaltura-player-js
 
 ## Getting Started
 
