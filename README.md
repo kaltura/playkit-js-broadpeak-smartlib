@@ -1,4 +1,4 @@
-# PlayKit JS Live BroadPeak - [broadpeak] Adapter for the [PlayKit JS Player] for samsung devices
+# PlayKit JS Live BroadPeak - [broadpeak] Adapter Plugin for the [Kaltura Player JS]
 
 [![Build Status](https://travis-ci.com/kaltura/playkit-js-avplay.svg?branch=master)](https://travis-ci.org/kaltura/playkit-js-broadpeak-smartlib)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
@@ -15,9 +15,7 @@ PlayKit JS Broadpeak Smartlib is written in [ECMAScript6], statically analysed u
 
 ### Prerequisites
 
-The plugin requires [PlayKit JS Player] to be loaded first.
-
-[playkit js player]: https://github.com/kaltura/playkit-js
+The plugin requires [Kaltura Player JS] to be loaded first.
 
 ### Installing
 
@@ -44,14 +42,23 @@ yarn run build
 Finally, add the bundle as a script tag in your page, and initialize the player
 
 ```html
-<script type="text/javascript" src="/PATH/TO/FILE/playkit.js"></script>
+<script type="text/javascript" src="/PATH/TO/FILE/kaltura-{ovp/ott}-player.js"></script>
 <script type="text/javascript" src="/PATH/TO/FILE/playkit-js-broadpeak-smartlib.js"></script>
 <div id="player-placeholder"" style="height:360px; width:640px">
 <script type="text/javascript">
-  var playerContainer = document.querySelector("#player-placeholder");
-  var config = {...};
-  var player = playkit.core.loadPlayer(config);
-  playerContainer.appendChild(player.getView());
+  var config = {
+    targetId: 'player-placeholder',
+    provider: {
+      partnerId: {YOUR_PARTNER_ID}
+      ...
+    },
+    ...
+    plugins: {
+        broadpeak: {}
+    }
+  ...
+  };
+  var player = KalturaPlayer.setup(config);
   player.play();
 </script>
 ```
@@ -87,7 +94,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/kaltura/playkit-js-live-fallback/tags).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/kaltura/playkit-js-broadpeak-smartlib/tags).
 
 ## License
 
