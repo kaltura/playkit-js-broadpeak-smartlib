@@ -146,10 +146,10 @@ class BroadPeak extends BasePlugin {
         break;
       case LogLevel.TIME.name:
       case LogLevel.WARN.name:
+      case LogLevel.INFO.name:
         LoggerManager.getInstance().setLogLevel(BroadPeakLogLevel.INFO);
         break;
       case LogLevel.DEBUG.name:
-      case LogLevel.INFO.name:
       default:
         LoggerManager.getInstance().setLogLevel(BroadPeakLogLevel.DEBUG);
         break;
