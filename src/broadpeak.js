@@ -8,8 +8,8 @@ import {BPMiddleware} from './bp-middleware';
 const {BaseMiddleware, Utils, LogLevel} = core;
 const BroadPeakLogLevel: { [level: string]: number } = {
   OFF: -1,
-  DEBUG: 0,
-  INFO: 1
+  INFO: 0,
+  DEBUG: 1
 };
 
 LoggerManager.getInstance().setLogLevel(BroadPeakLogLevel.OFF);
