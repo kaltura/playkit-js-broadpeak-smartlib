@@ -6,7 +6,7 @@ import {BPEngineDecorator} from './bp-engine-decorator';
 import {BPMiddleware} from './bp-middleware';
 
 const {BaseMiddleware, Utils, LogLevel} = core;
-const BroadPeakLogLevel: { [level: string]: number } = {
+const BroadPeakLogLevel: {[level: string]: number} = {
   OFF: -1,
   INFO: 0,
   DEBUG: 1
