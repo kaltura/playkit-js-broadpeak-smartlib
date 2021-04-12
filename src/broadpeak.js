@@ -1,10 +1,19 @@
 // @flow
 import {KalturaPlayer, BasePlugin, core} from 'kaltura-player-js';
 import {SmartLib} from '@broadpeak/smartlib-v3';
+import {LoggerManager} from '@broadpeak/smartlib-v3';
 import {BPEngineDecorator} from './bp-engine-decorator';
 import {BPMiddleware} from './bp-middleware';
 
-const {BaseMiddleware, Utils} = core;
+const {BaseMiddleware, Utils, LogLevel} = core;
+const BroadPeakLogLevel: {[level: string]: number} = {
+  OFF: -1,
+  INFO: 0,
+  DEBUG: 1
+};
+
+LoggerManager.getInstance().setLogLevel(BroadPeakLogLevel.OFF);
+
 /**
  * The BroadPeak plugin.
  * @class BroadPeak
@@ -88,9 +97,8 @@ class BroadPeak extends BasePlugin {
 
   constructor(name: string, player: KalturaPlayer, config: Object) {
     super(name, player, config);
-    this.eventManager.listen(this.player, this.player.Event.Core.ERROR, () => {
-      this.reset();
-    });
+    this._setLogLevel();
+    this.eventManager.listen(this.player, this.player.Event.Core.ERROR, () => this.reset());
     this._attachSourceChange();
     SmartLib.getInstance().init(this.config.analyticsAddress, this.config.nanoCDNHost, this.config.broadpeakDomainNames);
   }
@@ -127,6 +135,25 @@ class BroadPeak extends BasePlugin {
   destroy(): void {
     // not sure if it's correct cause we couldn't know for multiple players
     SmartLib.getInstance().release();
+  }
+
+  _setLogLevel(): void {
+    const playerLogLevel = Utils.Object.getPropertyPath(this.player, 'config.log.level');
+    switch (playerLogLevel) {
+      case LogLevel.ERROR.name:
+      case LogLevel.OFF.name:
+        LoggerManager.getInstance().setLogLevel(BroadPeakLogLevel.OFF);
+        break;
+      case LogLevel.DEBUG.name:
+        LoggerManager.getInstance().setLogLevel(BroadPeakLogLevel.DEBUG);
+        break;
+      case LogLevel.TIME.name:
+      case LogLevel.WARN.name:
+      case LogLevel.INFO.name:
+      default:
+        LoggerManager.getInstance().setLogLevel(BroadPeakLogLevel.INFO);
+        break;
+    }
   }
 
   _attachSourceChange() {
