@@ -98,9 +98,7 @@ class BroadPeak extends BasePlugin {
   constructor(name: string, player: KalturaPlayer, config: Object) {
     super(name, player, config);
     this._setLogLevel();
-    this.eventManager.listen(this.player, this.player.Event.Core.ERROR, () => {
-      this.reset();
-    });
+    this.eventManager.listen(this.player, this.player.Event.Core.ERROR, () => this.reset());
     this._attachSourceChange();
     SmartLib.getInstance().init(this.config.analyticsAddress, this.config.nanoCDNHost, this.config.broadpeakDomainNames);
   }
@@ -146,13 +144,14 @@ class BroadPeak extends BasePlugin {
       case LogLevel.OFF.name:
         LoggerManager.getInstance().setLogLevel(BroadPeakLogLevel.OFF);
         break;
-      case LogLevel.DEBUG.name:
-      case LogLevel.INFO.name:
-        LoggerManager.getInstance().setLogLevel(BroadPeakLogLevel.DEBUG);
-        break;
       case LogLevel.TIME.name:
       case LogLevel.WARN.name:
         LoggerManager.getInstance().setLogLevel(BroadPeakLogLevel.INFO);
+        break;
+      case LogLevel.DEBUG.name:
+      case LogLevel.INFO.name:
+      default:
+        LoggerManager.getInstance().setLogLevel(BroadPeakLogLevel.DEBUG);
         break;
     }
   }
