@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/kaltura/playkit-js-broadpeak-smartlib/compare/v1.1.0...v1.1.1) (2021-04-25)
+
+
+### Bug Fixes
+
+* **FEC-11138:** Remove player logs from console ([#2](https://github.com/kaltura/playkit-js-broadpeak-smartlib/issues/2)) ([3231556](https://github.com/kaltura/playkit-js-broadpeak-smartlib/commit/3231556b21b25d248e996c9b142db34b142491c7))
+
 ## 1.1.0 (2021-01-18)
 
 
