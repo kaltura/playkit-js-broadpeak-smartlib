@@ -63,6 +63,7 @@ Finally, add the bundle as a script tag in your page, and initialize the player
   player.play();
 </script>
 ```
+
 ## Running the tests
 
 Tests can be run locally via [Karma], which will run on Chrome, Firefox and Safari
