@@ -37,7 +37,10 @@ class BPMiddleware extends BaseMiddleware {
    * @memberof BPMiddleware
    */
   load(next: Function): void {
-    this._context.srcReady().finally(() => this.callNext(next));
+    this._context
+      .srcReady()
+      .catch(() => {})
+      .then(() => this.callNext(next));
   }
 }
 
