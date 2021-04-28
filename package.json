@@ -42,7 +42,8 @@
     ]
   },
   "dependencies": {
-    "@broadpeak/smartlib-v3": "^3.2.0-3317"
+    "@broadpeak/smartlib-v3": "^3.2.0-3317",
+    "core-js": "^3.11.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",

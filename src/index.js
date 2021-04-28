@@ -1,4 +1,6 @@
 // @flow
+import 'core-js/stable/promise';
+
 import {registerPlugin} from 'kaltura-player-js';
 import {BroadPeak} from './broadpeak';
 
