@@ -102,7 +102,7 @@ class BroadPeak extends BasePlugin {
     this._attachSourceChange();
     SmartLib.getInstance().init(this.config.analyticsAddress, this.config.nanoCDNHost, this.config.broadpeakDomainNames);
     if (this.config.uuid) {
-      SmartLib.getInstance().setUUID();
+      SmartLib.getInstance().setUUID(this.config.uuid);
     }
   }
 
