@@ -101,6 +101,9 @@ class BroadPeak extends BasePlugin {
     this.eventManager.listen(this.player, this.player.Event.Core.ERROR, () => this.reset());
     this._attachSourceChange();
     SmartLib.getInstance().init(this.config.analyticsAddress, this.config.nanoCDNHost, this.config.broadpeakDomainNames);
+    if (this.config.uuid) {
+      SmartLib.getInstance().setUUID(this.config.uuid);
+    }
   }
 
   srcReady(): Promise<*> {
