@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/kaltura/playkit-js-broadpeak-smartlib/compare/v1.1.2...v1.2.0) (2021-10-27)
+
+
+### Features
+
+* **FEC-11561:** add option to set UUID ([#5](https://github.com/kaltura/playkit-js-broadpeak-smartlib/issues/5)) ([8bcca75](https://github.com/kaltura/playkit-js-broadpeak-smartlib/commit/8bcca75e8ddcdd7f668c962711f8b42101524f6a))
+
 ### [1.1.2](https://github.com/kaltura/playkit-js-broadpeak-smartlib/compare/v1.1.1...v1.1.2) (2021-04-29)
 
 
