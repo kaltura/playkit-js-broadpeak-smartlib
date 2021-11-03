@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/kaltura/playkit-js-broadpeak-smartlib/compare/v1.2.0...v1.3.0) (2021-11-03)
+
+
+### Features
+
+* **FEC-11666:** Primary + Redirect token reports ([#6](https://github.com/kaltura/playkit-js-broadpeak-smartlib/issues/6)) ([a440dd3](https://github.com/kaltura/playkit-js-broadpeak-smartlib/commit/a440dd31582b7973e8b79d957f8c1abcbc549c7b))
+
 ## [1.2.0](https://github.com/kaltura/playkit-js-broadpeak-smartlib/compare/v1.1.2...v1.2.0) (2021-10-27)
 
 
