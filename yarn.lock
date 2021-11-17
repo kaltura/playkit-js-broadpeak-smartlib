@@ -1714,10 +1714,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@broadpeak/smartlib-v3@^3.2.0-3317":
-  version "3.2.0-3317"
-  resolved "https://delivery-platform.broadpeak.tv/js/@broadpeak%2fsmartlib-v3/-/smartlib-v3-3.2.0-3317.tgz#e2aec30bfbe96c516600c85f5f24ec8c89ca1cf2"
-  integrity sha512-oTXlVoD576Qzp7UwZLHTF4IkxXdT6GUuG8/zkhNvENkSqCTojtqDYFPqzByGClWI33dt/KgAQ3YRaDPLboijUA==
+"@broadpeak/smartlib-v3-nopolyfill@^3.3.5.3791":
+  version "3.3.5-3791"
+  resolved "https://delivery-platform.broadpeak.tv/js/@broadpeak%2fsmartlib-v3-nopolyfill/-/smartlib-v3-nopolyfill-3.3.5-3791.tgz#3574f517cb8bd4786ddfc4d314e3d4adcabe40d7"
+  integrity sha512-NqzhzpBzRQrAMRKHE1FUEgnozN/Yy9m17lCj9ixl9J/5CfOQw1dLROmOvH5kY31o28aG1XlVlxaVSVw54gmqaw==
   dependencies:
     xmlhttprequest "^1.8.0"
 
