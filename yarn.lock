@@ -1714,10 +1714,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@broadpeak/smartlib-v3@^3.2.0-3317":
-  version "3.2.0-3317"
-  resolved "https://delivery-platform.broadpeak.tv/js/@broadpeak%2fsmartlib-v3/-/smartlib-v3-3.2.0-3317.tgz#e2aec30bfbe96c516600c85f5f24ec8c89ca1cf2"
-  integrity sha512-oTXlVoD576Qzp7UwZLHTF4IkxXdT6GUuG8/zkhNvENkSqCTojtqDYFPqzByGClWI33dt/KgAQ3YRaDPLboijUA==
+"@broadpeak/smartlib-v3-nopolyfill@^3.3.5.3791":
+  version "3.3.5-3791"
+  resolved "https://delivery-platform.broadpeak.tv/js/@broadpeak%2fsmartlib-v3-nopolyfill/-/smartlib-v3-nopolyfill-3.3.5-3791.tgz#3574f517cb8bd4786ddfc4d314e3d4adcabe40d7"
+  integrity sha512-NqzhzpBzRQrAMRKHE1FUEgnozN/Yy9m17lCj9ixl9J/5CfOQw1dLROmOvH5kY31o28aG1XlVlxaVSVw54gmqaw==
   dependencies:
     xmlhttprequest "^1.8.0"
 
@@ -3692,11 +3692,6 @@ core-js@^2.6.5:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
   integrity sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
-
-core-js@^3.11.0:
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.11.0.tgz#05dac6aa70c0a4ad842261f8957b961d36eb8926"
-  integrity sha512-bd79DPpx+1Ilh9+30aT5O1sgpQd4Ttg8oqkqi51ZzhedMM1omD2e6IOF48Z/DzDCZ2svp49tN/3vneTK6ZBkXw==
 
 core-util-is@~1.0.0:
   version "1.0.2"
