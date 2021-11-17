@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/kaltura/playkit-js-broadpeak-smartlib/compare/v1.3.0...v1.3.1) (2021-11-17)
+
+
+### Bug Fixes
+
+* **FEC-11654:** Broadpeak Smartlib for specific LG WebOS versions ([#7](https://github.com/kaltura/playkit-js-broadpeak-smartlib/issues/7)) ([332f5e5](https://github.com/kaltura/playkit-js-broadpeak-smartlib/commit/332f5e58cf137fa994dbf81f98acc0f613ac4d32))
+
 ## [1.3.0](https://github.com/kaltura/playkit-js-broadpeak-smartlib/compare/v1.2.0...v1.3.0) (2021-11-03)
 
 
