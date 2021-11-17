@@ -1,4 +1,4 @@
 // @flow
-declare module '@broadpeak/smartlib-v3' {
+declare module '@broadpeak/smartlib-v3-nopolyfill' {
   declare module.exports: any;
 }
