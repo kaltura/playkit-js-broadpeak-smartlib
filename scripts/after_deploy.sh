@@ -13,10 +13,7 @@ echo "$packageName"
 echo "$currentVersion"
 
 TAGGED_BRANCH=$(git ls-remote origin | sed -n "\|$TRAVIS_COMMIT\s\+refs/heads/|{s///p}")
-UPDATE_SCHEMA=true
-if [ "$TAGGED_BRANCH" != "master" ]; then
-  UPDATE_SCHEMA=false
-fi
+UPDATE_SCHEMA=false
 
 for i in {1..3}; do
   echo "Try number $i for pinging Jenkins...\n"
