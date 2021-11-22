@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.2](https://github.com/kaltura/playkit-js-broadpeak-smartlib/compare/v1.3.1...v1.3.2) (2021-11-22)
+
+
+### Build System
+
+* add plugin to jenkins ([#8](https://github.com/kaltura/playkit-js-broadpeak-smartlib/issues/8)) ([d391d9c](https://github.com/kaltura/playkit-js-broadpeak-smartlib/commit/d391d9c7b1f59ab2eb09cebe6dfc53555d4cd720))
+* change plugin name ([1b44e16](https://github.com/kaltura/playkit-js-broadpeak-smartlib/commit/1b44e16f83614246f62c0152f75847db073f9594))
+* fix npm name ([6216265](https://github.com/kaltura/playkit-js-broadpeak-smartlib/commit/621626525e3cc5cf67e249fb8c4b6f8b739a1174))
+
 ### [1.3.1](https://github.com/kaltura/playkit-js-broadpeak-smartlib/compare/v1.3.0...v1.3.1) (2021-11-17)
 
 
