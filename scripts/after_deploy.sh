@@ -2,8 +2,7 @@
 set -x
 curl ifconfig.me
 
-#!/bin/bash
-REPO_PREFIX="@playkit-js/playkit-js-"
+REPO_PREFIX="@playkit-js/"
 HTTP_SUCCESS=false
 
 currentVersion=$(npx -c 'echo "$npm_package_version"')
