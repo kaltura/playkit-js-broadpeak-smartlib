@@ -23,6 +23,7 @@ before_install:
   - chmod +x ./scripts/travis.sh
   - npm config set @broadpeak:registry https://delivery-platform.broadpeak.tv/js/
   - npm config set //delivery-platform.broadpeak.tv/js/:_authToken=$BP_NPM_TOKEN
+  - chmod +x ./scripts/after_deploy.sh
 
 script: ./scripts/travis.sh
 
@@ -30,11 +31,22 @@ stages:
   - Tests
   - Release canary
   - Release
+  - Deploy
 
 jobs:
   fast_finish: true
   include:
     # https://docs.travis-ci.com/user/build-stages/deploy-github-releases/
+    - stage: Deploy
+      name: "Deploying a new version"
+      if: tag IS present
+      env: TRAVIS_MODE=deploy
+      deploy:
+        - provider: script
+          on:
+            tags: true
+            all_branches: true
+          script: bash ./scripts/after_deploy.sh "$JENKINS_TAG_TOKEN"
     - stage: Release
       name: 'Releasing a new version'
       if: tag IS present
@@ -71,6 +83,8 @@ jobs:
         on:
           tags: false
           branch: master
+      after_deploy:
+        - ./scripts/after_deploy.sh "$JENKINS_CANARY_TOKEN"
     # Required tests
     - stage: Tests
       if: (branch = master) OR (tag IS present) OR (type = pull_request)
