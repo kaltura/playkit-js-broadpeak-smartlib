@@ -2,8 +2,8 @@
 
 [![Build Status](https://travis-ci.com/kaltura/playkit-js-avplay.svg?branch=master)](https://travis-ci.org/kaltura/playkit-js-broadpeak-smartlib)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![](https://img.shields.io/npm/v/@playkit-js/playkit-js-live-fallback/latest.svg)](https://www.npmjs.com/package/@playkit-js/playkit-js-broadpeak-smartlib)
-[![](https://img.shields.io/npm/v/@playkit-js/playkit-js-live-fallback/canary.svg)](https://www.npmjs.com/package/@playkit-js/playkit-js-broadpeak-smartlib/v/canary)
+[![](https://img.shields.io/npm/v/@playkit-js/playkit-js-live-fallback/latest.svg)](https://www.npmjs.com/package/@playkit-js/playkit-js-broadpeak)
+[![](https://img.shields.io/npm/v/@playkit-js/playkit-js-live-fallback/canary.svg)](https://www.npmjs.com/package/@playkit-js/playkit-js-broadpeak/v/canary)
 
 PlayKit JS Broadpeak Smartlib is written in [ECMAScript6], statically analysed using [Flow] and transpiled in ECMAScript5 using [Babel].
 
@@ -44,7 +44,7 @@ Finally, add the bundle as a script tag in your page, and initialize the player
 
 ```html
 <script type="text/javascript" src="/PATH/TO/FILE/kaltura-{ovp/ott}-player.js"></script>
-<script type="text/javascript" src="/PATH/TO/FILE/playkit-js-broadpeak-smartlib.js"></script>
+<script type="text/javascript" src="/PATH/TO/FILE/playkit-js-broadpeak.js"></script>
 <div id="player-placeholder"" style="height:360px; width:640px">
 <script type="text/javascript">
   var config = {
