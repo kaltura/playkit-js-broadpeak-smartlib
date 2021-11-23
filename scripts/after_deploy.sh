@@ -13,6 +13,9 @@ echo "$currentVersion"
 
 TAGGED_BRANCH=$(git ls-remote origin | sed -n "\|$TRAVIS_COMMIT\s\+refs/heads/|{s///p}")
 UPDATE_SCHEMA=false
+if [ "${TRAVIS_MODE}" = "releaseCanary" ]; then
+  UPDATE_SCHEMA=true
+fi
 
 for i in {1..3}; do
   echo "Try number $i for pinging Jenkins...\n"
