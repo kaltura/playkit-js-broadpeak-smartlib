@@ -97,6 +97,9 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/kaltura/playkit-js-broadpeak-smartlib/tags).
 
-## License
+## License and Copyright Information
 
-This project is licensed under the AGPL-3.0 License - see the [LICENSE.md](LICENSE.md) file for details
+All code in this project is released under the [AGPLv3 license](http://www.gnu.org/licenses/agpl-3.0.html) unless a different license for a particular library is specified in the applicable library path.   
+
+Copyright © Kaltura Inc. All rights reserved.   
+Authors and contributors: See [GitHub contributors list](https://github.com/kaltura/playkit-js-broadpeak-smartlib/graphs/contributors).
