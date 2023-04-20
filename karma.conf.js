@@ -4,10 +4,19 @@ delete webpackConfig.externals;
 // Need to define inline source maps when using karma
 webpackConfig.devtool = 'inline-source-map';
 
+const isWindows = /^win/.test(process.platform);
+const isMacOS = /^darwin/.test(process.platform);
 // Create custom launcher in case running with Travis
+const customLaunchers = {
+  Chrome_travis_ci: {
+    base: 'Chrome',
+    flags: ['--no-sandbox', '--autoplay-policy=no-user-gesture-required']
+  }
+};
+
 const launchers = {
   Chrome_browser: {
-    base: 'ChromeHeadless',
+    base: 'Chrome',
     flags: ['--no-sandbox', '--autoplay-policy=no-user-gesture-required']
   }
 };
@@ -15,7 +24,8 @@ const launchers = {
 module.exports = function (config) {
   let karmaConf = {
     logLevel: config.LOG_INFO,
-    browsers: [],
+    customLaunchers: launchers,
+    browsers: ['Chrome_browser', 'Firefox'],
     concurrency: 1,
     singleRun: true,
     colors: true,
@@ -38,7 +48,16 @@ module.exports = function (config) {
     }
   };
 
-  karmaConf.customLaunchers = launchers;
-  karmaConf.browsers = ['Chrome_browser'];
+  if (process.env.TRAVIS) {
+    karmaConf.customLaunchers = customLaunchers;
+    karmaConf.browsers = ['Chrome_travis_ci'];
+  } else {
+    if (isWindows) {
+      karmaConf.browsers.push('IE');
+    } else if (isMacOS) {
+      karmaConf.browsers.push('Safari');
+    }
+  }
+
   config.set(karmaConf);
 };
