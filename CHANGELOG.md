@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.3.3 (2023-05-07)
+
 ### [1.3.2](https://github.com/kaltura/playkit-js-broadpeak-smartlib/compare/v1.3.1...v1.3.2) (2021-11-22)
 
 
