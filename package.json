@@ -42,7 +42,7 @@
     ]
   },
   "dependencies": {
-    "@broadpeak/smartlib-v3-nopolyfill": "^3.3.5.3791"
+    "@broadpeak/smartlib-v3-nopolyfill": "4.4.01.2c329d4"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
