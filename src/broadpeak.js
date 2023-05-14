@@ -1,5 +1,5 @@
 // @flow
-import {KalturaPlayer, BasePlugin, core} from 'kaltura-player-js';
+import {KalturaPlayer, BasePlugin, core} from '@playkit-js/kaltura-player-js';
 import {SmartLib, LoggerManager} from '@broadpeak/smartlib-v3-nopolyfill';
 import {BPEngineDecorator} from './bp-engine-decorator';
 import {BPMiddleware} from './bp-middleware';
