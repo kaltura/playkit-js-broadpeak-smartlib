@@ -168,7 +168,15 @@ class BroadPeak extends BasePlugin {
   }
 
   _getSource(playbackUrl: string): void {
+    //console.log('>>> getSource');
+
     this.session.getURL(playbackUrl).then(result => {
+      if (!this.session) {
+        return;
+      }
+
+      //console.log('>>> getURL');
+
       if (!result.isError()) {
         const updatedUrl = result.getURL();
         this.logger.debug('getUrl response', updatedUrl);
