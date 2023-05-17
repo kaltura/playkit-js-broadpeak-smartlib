@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.4-bpk-patch.0](https://github.com/kaltura/playkit-js-broadpeak-smartlib/compare/v1.3.3...v1.3.4-bpk-patch.0) (2023-05-17)
+
+
+### Bug Fixes
+
+* **FEC-13123:** replace travis with github actions ([#12](https://github.com/kaltura/playkit-js-broadpeak-smartlib/issues/12)) ([1411f5c](https://github.com/kaltura/playkit-js-broadpeak-smartlib/commit/1411f5c201440dc0bf826f9458ce64e339851b8b))
+
 ### 1.3.3 (2023-05-07)
 
 ### [1.3.2](https://github.com/kaltura/playkit-js-broadpeak-smartlib/compare/v1.3.1...v1.3.2) (2021-11-22)
