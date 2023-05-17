@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.4-bpk-patch.1](https://github.com/kaltura/playkit-js-broadpeak-smartlib/compare/v1.3.4-bpk-patch.0...v1.3.4-bpk-patch.1) (2023-05-17)
+
 ### [1.3.4-bpk-patch.0](https://github.com/kaltura/playkit-js-broadpeak-smartlib/compare/v1.3.3...v1.3.4-bpk-patch.0) (2023-05-17)
 
 
