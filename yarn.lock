@@ -1714,7 +1714,7 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@broadpeak/smartlib-v3-nopolyfill@4.4.01.2c329d4":
+"@broadpeak/smartlib-v3-nopolyfill@4.4.1-2c329d4":
   version "4.4.1-2c329d4"
   resolved "https://delivery-platform.broadpeak.tv/js/@broadpeak%2fsmartlib-v3-nopolyfill/-/smartlib-v3-nopolyfill-4.4.1-2c329d4.tgz#c540007b434c65bc0dec43d72357289d90063191"
   integrity sha512-xw+OxFklxtHUD87p9DnTLqq+svHoTs4X22jyFx5wpeQ0SvqtHJ6Rcq0pHiblMYTaGTpT1p+3UJuAGt+NUmyCWQ==
