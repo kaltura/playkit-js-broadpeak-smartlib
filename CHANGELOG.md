@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.3.5 (2023-11-26)
+
+
+### Bug Fixes
+
+* **SUP-39906:** pass error object in promise rejection ([#16](https://github.com/kaltura/playkit-js-broadpeak-smartlib/issues/16)) ([4b9c8cc](https://github.com/kaltura/playkit-js-broadpeak-smartlib/commit/4b9c8cc34d702998137b20647c1a71d75b5fb663))
+
 ### 1.3.4 (2023-05-17)
 
 
