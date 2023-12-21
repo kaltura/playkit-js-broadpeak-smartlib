@@ -42,7 +42,7 @@
     ]
   },
   "dependencies": {
-    "@broadpeak/smartlib-v3-nopolyfill": "^3.3.5.3791"
+    "@broadpeak/smartlib": "https://delivery-platform.broadpeak.tv/js/@broadpeak%2fsmartlib/-/smartlib-4.6.4-3fbb170.rc1.tgz"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
@@ -52,6 +52,7 @@
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-flow": "^7.10.4",
     "@babel/register": "^7.10.5",
+    "@playkit-js/kaltura-player-js": "latest",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-istanbul": "^6.0.0",
@@ -70,7 +71,6 @@
     "flow-bin": "^0.129.0",
     "husky": "^4.2.5",
     "istanbul": "^0.4.5",
-    "@playkit-js/kaltura-player-js": "latest",
     "karma": "^5.1.0",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^3.1.0",
