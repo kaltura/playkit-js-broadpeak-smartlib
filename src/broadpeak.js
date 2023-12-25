@@ -1,5 +1,5 @@
 // @flow
-import {KalturaPlayer, BasePlugin, core} from 'kaltura-player-js';
+import {KalturaPlayer, BasePlugin, core} from '@playkit-js/kaltura-player-js';
 import {SmartLib, LoggerManager} from '@broadpeak/smartlib-v3-nopolyfill';
 import {BPEngineDecorator} from './bp-engine-decorator';
 import {BPMiddleware} from './bp-middleware';
@@ -176,9 +176,10 @@ class BroadPeak extends BasePlugin {
         this.dispatchEvent(this.player.Event.SOURCE_URL_SWITCHED, {originalUrl: playbackUrl, updatedUrl});
         this._srcPromise.resolve();
       } else {
-        this.logger.error('getUrl failed', result.getErrorCode(), result.getErrorMessage());
+        const errorMessage = `getUrl failed with error code: ${result.getErrorCode()}. error message: ${result.getErrorMessage()}`;
+        this.logger.error(errorMessage);
         this.reset();
-        this._srcPromise.reject();
+        this._srcPromise.reject(new Error(errorMessage));
       }
     });
   }

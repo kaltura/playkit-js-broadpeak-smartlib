@@ -2,5 +2,6 @@
 .*/node_modules/**
 [include]
 [libs]
+./src
 node_modules/@playkit-js/playkit-js/flow-typed/
 [options]
