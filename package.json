@@ -42,7 +42,7 @@
     ]
   },
   "dependencies": {
-    "@broadpeak/smartlib": "https://delivery-platform.broadpeak.tv/js/@broadpeak%2fsmartlib/-/smartlib-4.6.4-3fbb170.rc1.tgz"
+    "@broadpeak/smartlib-v3-nopolyfill": "https://delivery-platform.broadpeak.tv/js/@broadpeak%2fsmartlib/-/smartlib-4.6.4-3fbb170.rc1.tgz"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
