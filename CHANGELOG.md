@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.4.0 (2024-01-18)
+
+
+### Features
+
+* **FEC-13645:** upgrade smart lib to latest version 4.6.4 ([#20](https://github.com/kaltura/playkit-js-broadpeak-smartlib/issues/20)) ([ed1e03e](https://github.com/kaltura/playkit-js-broadpeak-smartlib/commit/ed1e03e3307818138db769daa6b164831a51f265))
+
 ### 1.3.5 (2023-11-26)
 
 
