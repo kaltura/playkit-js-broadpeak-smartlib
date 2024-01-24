@@ -1,6 +1,6 @@
 // @flow
 import {KalturaPlayer, BasePlugin, core} from '@playkit-js/kaltura-player-js';
-import {SmartLib, LoggerManager} from '@broadpeak/smartlib-v3-nopolyfill';
+import {SmartLib, LoggerManager, StreamingSessionOptions} from '@broadpeak/smartlib-v3-nopolyfill';
 import {BPEngineDecorator} from './bp-engine-decorator';
 import {BPMiddleware} from './bp-middleware';
 
@@ -103,6 +103,22 @@ class BroadPeak extends BasePlugin {
     if (this.config.uuid) {
       SmartLib.getInstance().setUUID(this.config.uuid);
     }
+    if (this.config.gdprReference) {
+      //GDPR_DELETE=1;static GDPR_ANONYMIZED=2;static GDPR_ENCRYPTED=3;static GDPR_CLEAR=4
+      SmartLib.getInstance().setOption(StreamingSessionOptions.GDPR_PREFERENCE, this.config.gdprReference);
+    }
+    if (this.config.deviceType) {
+      SmartLib.getInstance().setDeviceType(this.config.deviceType);
+    }
+    if (this.config.userAgent) {
+      SmartLib.getInstance().setUserAgent(this.config.userAgent);
+    }
+    if (this.config.userAgentAdEvent) {
+      SmartLib.getInstance().setOption(StreamingSessionOptions.USERAGENT_AD_EVENT, this.config.userAgentAdEvent);
+    }
+    if (this.config.sessionKeepaliveFrequency) {
+      SmartLib.getInstance().setOption(StreamingSessionOptions.SESSION_KEEPALIVE_FREQUENCY, this.config.sessionKeepaliveFrequency);
+    }
   }
 
   srcReady(): Promise<*> {
@@ -163,8 +179,17 @@ class BroadPeak extends BasePlugin {
       this._srcPromise = Utils.Object.defer();
       this.session = SmartLib.getInstance().createStreamingSession();
       this.session.attachPlayer(this.player);
+      this._setSessionParameters(this.session);
       this._getSource(event.payload.selectedSource[0].url);
     });
+  }
+
+  _setSessionParameters(session) {
+    if (this.config.sessionCustomParameters) {
+      Object.entries(this.config.sessionCustomParameters).forEach(([key, value]) => {
+        session.setCustomParameter(key, value);
+      });
+    }
   }
 
   _getSource(playbackUrl: string): void {
