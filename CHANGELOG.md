@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.5.0 (2024-02-01)
+
+
+### Features
+
+* add session options ([#21](https://github.com/kaltura/playkit-js-broadpeak-smartlib/issues/21)) ([ac577df](https://github.com/kaltura/playkit-js-broadpeak-smartlib/commit/ac577dff21e82f2c642ff108d380903fa57b87d1))
+
 ### 1.4.1 (2024-01-18)
 
 ## 1.4.0 (2024-01-18)
