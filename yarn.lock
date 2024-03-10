@@ -1724,9 +1724,9 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@broadpeak/smartlib-v3-nopolyfill@https://delivery-platform.broadpeak.tv/js/@broadpeak%2fsmartlib/-/smartlib-4.7.1-43339dd.tgz":
-  version "4.7.1-43339dd"
-  resolved "https://delivery-platform.broadpeak.tv/js/@broadpeak%2fsmartlib/-/smartlib-4.7.1-43339dd.tgz#7fae112c2497f28542b925d6e1c49a5157f84f84"
+"@broadpeak/smartlib-v3-nopolyfill@https://delivery-platform.broadpeak.tv/js/@broadpeak%2fsmartlib/-/smartlib-4.6.4-4179b2e.tgz":
+  version "4.6.4-4179b2e"
+  resolved "https://delivery-platform.broadpeak.tv/js/@broadpeak%2fsmartlib/-/smartlib-4.6.4-4179b2e.tgz#aa07df121de4dd6072c908468b5554cdb8e9dd8d"
   dependencies:
     xmlhttprequest "^1.8.0"
 
