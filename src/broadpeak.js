@@ -201,6 +201,12 @@ class BroadPeak extends BasePlugin {
         this.dispatchEvent(this.player.Event.SOURCE_URL_SWITCHED, {originalUrl: playbackUrl, updatedUrl});
         this._srcPromise.resolve();
       } else {
+        if (result.getErrorCode() === 3500) {
+          //ignore this error as it happened when change channels
+          this.reset();
+          this._srcPromise.resolve();
+          return;
+        }
         const errorMessage = `getUrl failed with error code: ${result.getErrorCode()}. error message: ${result.getErrorMessage()}`;
         this.logger.error(errorMessage);
         this.reset();
