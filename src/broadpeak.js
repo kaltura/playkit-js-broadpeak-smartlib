@@ -1,6 +1,6 @@
 // @flow
 import {KalturaPlayer, BasePlugin, core} from '@playkit-js/kaltura-player-js';
-import {SmartLib, LoggerManager, StreamingSessionOptions} from '@broadpeak/smartlib-v3-nopolyfill';
+import {SmartLib, LoggerManager, StreamingSessionOptions, StreamingSessionResult} from '@broadpeak/smartlib-v3-nopolyfill';
 import {BPEngineDecorator} from './bp-engine-decorator';
 import {BPMiddleware} from './bp-middleware';
 
@@ -201,8 +201,8 @@ class BroadPeak extends BasePlugin {
         this.dispatchEvent(this.player.Event.SOURCE_URL_SWITCHED, {originalUrl: playbackUrl, updatedUrl});
         this._srcPromise.resolve();
       } else {
-        if (result.getErrorCode() === 3500) {
-          //ignore this error as it happened when change channels
+        if (result.getErrorCode() === StreamingSessionResult.RESULT_SESSION_HAS_BEEN_STOPPED_DURING_REQUEST) {
+          //ignore this error as it happened when change tabs
           this.reset();
           this._srcPromise.resolve();
           return;
