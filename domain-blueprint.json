@@ -1,0 +1,138 @@
+{
+  "repositoryName": "playkit-js-broadpeak-smartlib",
+  "version": "1.0.0",
+  "lastUpdated": "2026-05-04",
+  "coreResponsibility": {
+    "summary": "A Kaltura Player plugin that integrates the Broadpeak SmartLib SDK for CDN optimization, enabling nanoCDN functionality and streaming session management for improved video delivery.",
+    "type": "plugin",
+    "category": "CDN-optimization"
+  },
+  "domainAndLogicOwnership": {
+    "featureOwnership": [
+      "Broadpeak SmartLib SDK integration",
+      "NanoCDN streaming optimization",
+      "CDN session management",
+      "URL rewriting for optimized delivery",
+      "Streaming session lifecycle management",
+      "GDPR preference handling for streaming sessions",
+      "Custom session parameter configuration",
+      "Device type and user agent configuration",
+      "Session keepalive management"
+    ],
+    "dataHandling": [
+      "Streaming session state (session creation, attachment, stop)",
+      "Source URL transformation (original to optimized CDN URL)",
+      "Analytics address configuration",
+      "NanoCDN host configuration",
+      "Broadpeak domain names whitelist",
+      "UUID for session tracking",
+      "GDPR preference settings",
+      "Custom session parameters"
+    ]
+  },
+  "integrationPoints": {
+    "upstream": [
+      {
+        "name": "@playkit-js/kaltura-player-js",
+        "type": "peer-dependency",
+        "description": "Kaltura Player core that provides BasePlugin, middleware, engine decorator interfaces, and event system"
+      },
+      {
+        "name": "Kaltura Backend Services",
+        "type": "service",
+        "description": "Provides media source URLs that are transformed by this plugin"
+      }
+    ],
+    "downstream": [
+      {
+        "name": "Kaltura Player applications",
+        "type": "consumer",
+        "description": "Web and TV applications embedding Kaltura Player with Broadpeak optimization"
+      },
+      {
+        "name": "Broadpeak Analytics Backend",
+        "type": "service",
+        "description": "Receives streaming session analytics and telemetry data"
+      },
+      {
+        "name": "Broadpeak NanoCDN Infrastructure",
+        "type": "service",
+        "description": "Provides optimized content delivery via nanoCDN network"
+      }
+    ],
+    "externalAPIs": [
+      {
+        "name": "@broadpeak/smartlib-v3-nopolyfill",
+        "version": "4.7.1",
+        "type": "SDK",
+        "description": "Broadpeak SmartLib SDK for streaming session management and URL optimization"
+      }
+    ]
+  },
+  "technicalStack": {
+    "primaryLanguages": ["JavaScript (ES6+)", "Flow"],
+    "frameworks": ["Kaltura Player Plugin Architecture"],
+    "buildTools": ["Webpack", "Babel"],
+    "testFrameworks": ["Karma", "Mocha", "Chai", "Sinon"],
+    "entryPoints": [
+      {
+        "file": "src/index.js",
+        "description": "Plugin registration entry point - registers 'broadpeak' plugin with Kaltura Player"
+      },
+      {
+        "file": "src/broadpeak.js",
+        "description": "Main BroadPeak class extending BasePlugin - core plugin logic, SmartLib initialization, session management"
+      },
+      {
+        "file": "src/bp-middleware.js",
+        "description": "BPMiddleware class - intercepts load operations to ensure source URL transformation completes"
+      },
+      {
+        "file": "src/bp-engine-decorator.js",
+        "description": "BPEngineDecorator class - decorates engine to handle source URL changes"
+      }
+    ],
+    "outputArtifact": "dist/playkit-broadpeak.js"
+  },
+  "triageKeywords": [
+    "broadpeak",
+    "smartlib",
+    "nanoCDN",
+    "nanocdn",
+    "BroadPeak",
+    "SmartLib",
+    "streaming session",
+    "CDN optimization",
+    "getURL failed",
+    "analyticsAddress",
+    "nanoCDNHost",
+    "broadpeakDomainNames",
+    "SOURCE_URL_SWITCHED",
+    "BPMiddleware",
+    "BPEngineDecorator",
+    "session.stopStreamingSession",
+    "RESULT_SESSION_HAS_BEEN_STOPPED",
+    "setUUID",
+    "GDPR_PREFERENCE",
+    "sessionCustomParameters"
+  ],
+  "errorPatterns": [
+    "getUrl failed with error code",
+    "RESULT_SESSION_HAS_BEEN_STOPPED_DURING_REQUEST",
+    "SmartLib initialization failed",
+    "broadpeak plugin error",
+    "nanoCDN connection failed"
+  ],
+  "configurationKeys": [
+    "plugins.broadpeak.analyticsAddress",
+    "plugins.broadpeak.nanoCDNHost",
+    "plugins.broadpeak.broadpeakDomainNames",
+    "plugins.broadpeak.uuid",
+    "plugins.broadpeak.gdprReference",
+    "plugins.broadpeak.deviceType",
+    "plugins.broadpeak.userAgent",
+    "plugins.broadpeak.userAgentAdEvent",
+    "plugins.broadpeak.sessionKeepaliveFrequency",
+    "plugins.broadpeak.sessionCustomParameters"
+  ]
+}
